@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Todo({ todo }) {
+function Todo({ todo, index, removeTodo, toggleTodo }) {
   return (
-    <div>
-        <span>{todo.text}</span>
-        <button>x</button>
+    <div className={`todo ${todo.completed ? "completed" : " "}`}>
+        <span onClick={ () => toggleTodo(index) }>{todo.text}</span>
+        <button onClick={ () => removeTodo(index) }>x</button>
     </div>
   )
 }

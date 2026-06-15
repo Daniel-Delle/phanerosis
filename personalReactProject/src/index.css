@@ -1,0 +1,17 @@
+.c-para {
+    color: #06d6a0;
+}
+
+.inc-para {
+    color: red;
+}
+
+.todo-item {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.todo-item:hover {
+    transform: scale(1.01);
+}

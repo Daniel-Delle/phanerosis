@@ -9,6 +9,19 @@ function ToDoPage() {
     const newToDos = {text, completed : false}
     setTodos([...todos, newToDos])
   }
+ 
+  // remove todos
+  const removeTodo = (index) => {
+    const newTodos = todos.filter((_, i) => i !== index)
+    setTodos(newTodos)
+  }
+
+  // complete
+  const toggleTodo = (index) => {
+    const newTodos = [...todos]
+    newTodos[index].completed = !newTodos[index].completed
+    setTodos(newTodos)
+  }
 
   return (
     <div className='app'>
@@ -16,7 +29,7 @@ function ToDoPage() {
       <ToDoForm addTodo={addTodo} />
       <div className='todo-list'>
         {todos.map((todo, index) => (
-          <Todo key={index} todo={todo} />
+          <Todo todo={todo} index={index} removeTodo={removeTodo} toggleTodo={toggleTodo}/>
         ))}
       </div>
     </div>
