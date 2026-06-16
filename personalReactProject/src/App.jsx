@@ -3,40 +3,44 @@ import Todo from "./components/Todo"
 import TodoTitle from "./components/TodoTitle"
 
 function App() {
-  // Objects.........
-  const task1 = {
-    task : "Learn React",
-    description : "Build Projects",
-    complete : true
-  }
+  // Using an array of objects
+  const tasks = [
+  {
+      task : "Learn React",
+      description : "Build Projects",
+      complete : true,
+  },
 
-  const task2 = {
+  {
     task : "Meet targets",
     description : "Two hours daily",
-    complete : true
-  }
+    complete : true,
+    },
 
-  const task3 = {
+  {
     task : "Master React",
     description : "More Projects",
-    complete : false
-  }
+    complete : false,
+  },
 
-  const task4 = {
+  {
     task : "Python and Django",
     description : "1 hour daily",
-    complete : false
+    complete : false,
   }
+]
 
+// delete function
+  const deleteBtn = deleteBtn => alert("deleted")
 
   return (
     // Using objects........
     <>
       <TodoTitle />
-      <Todo todoDiv={task1}/>      
-      <Todo todoDiv={task4}/>
-      <Todo todoDiv={task2}/>
-      <Todo todoDiv={task3}/>
+      <Todo todoDiv={tasks[0]} dbtn = {deleteBtn}/>      
+      <Todo todoDiv={tasks[3]} dbtn = {deleteBtn}/>
+      <Todo todoDiv={tasks[1]} dbtn = {deleteBtn}/>
+      <Todo todoDiv={tasks[2]} dbtn = {deleteBtn}/>
     </>
 
 
@@ -52,9 +56,36 @@ function App() {
     //   <Todo task = "Land job" description = "Hahahaha" complete={true} />
     //   <Todo task = "Earn 10 billion" description = "Yagye sika" complete={false} />
     // </>
+
+
+    // Objects.........
+  // const task1 = {
+  //   task : "Learn React",
+  //   description : "Build Projects",
+  //   complete : true,
+  //   ray : ["apple", "banana", "bread"]
+  // }
+
+  // const task2 = {
+  //   task : "Meet targets",
+  //   description : "Two hours daily",
+  //   complete : true,
+  //   }
+
+  // const task3 = {
+  //   task : "Master React",
+  //   description : "More Projects",
+  //   complete : false,
+  // }
+
+  // const task4 = {
+  //   task : "Python and Django",
+  //   description : "1 hour daily",
+  //   complete : false,
+  //   ray : ["apple", "banana", "bread"],
+  // }
   )
 }
 
 
 export default App
- 

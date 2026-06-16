@@ -1,4 +1,5 @@
-function Todo( {todoDiv} ) {
+function Todo( {todoDiv, dbtn} ) {
+
   return (
     
     <div className="todo-item" style={{backgroundColor : todoDiv.complete ? "#ef476f" : "#ffc43d"}}>
@@ -7,20 +8,11 @@ function Todo( {todoDiv} ) {
 
       <p style= {{fontFamily : 'Franklin Gothic Medium', fontStyle : "italic"}}> {todoDiv.description} </p>
 
-      <p className={todoDiv.complete ? "c-para" : "inc-para"}> {todoDiv.complete ? "Completed" : "! Not Done Yet !" } </p>
+      {/* <p className={todoDiv.complete ? "c-para" : "inc-para"}> {todoDiv.complete ? "Completed" : "! Not Done Yet !" } </p> */}
       
-      <button>Delete</button>
+      <button onClick={dbtn}>Delete</button>
 
     </div>
-
-
-
-
-
-
-
-
-
 
 
 // WITHOUT OBJECTS......
