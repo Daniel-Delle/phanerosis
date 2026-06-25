@@ -94,4 +94,22 @@ button:hover {
   background: #c82333;
 }
 
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.035);
+    background-color: #fed7;
+}
+
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8rem;
+  height: 8rem;
+  border-width: 0.5rem;
+}
+
 

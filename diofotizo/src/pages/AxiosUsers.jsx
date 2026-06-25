@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Users() {
@@ -7,8 +8,8 @@ function Users() {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await fetch("https://jsonplaceholder.typicode.com/users")
-                const data = await res.json()
+                const res = await axios.get("https://jsonplaceholder.typicode.com/users")
+                const data = res.data
                 setUsers(data)
             } catch (error) {
                 console.log(error)

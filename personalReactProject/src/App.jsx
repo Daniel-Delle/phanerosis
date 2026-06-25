@@ -1,8 +1,12 @@
 import "./App.css"
+import Popup from "./components/Popup"
 import Todo from "./components/Todo"
 import TodoTitle from "./components/TodoTitle"
+import Counter from "./components/Counter"
+import { useState } from "react";
 
 function App() {
+  
   // Using an array of objects
   const tasks = [
   {
@@ -30,17 +34,37 @@ function App() {
   }
 ]
 
-// delete function
-  const deleteBtn = deleteBtn => alert("deleted")
+// delete function for delete button in todo component
+  const [popup, setPopup] = useState(false)
+  const deleteBtn = deleteBtn => setPopup(true)
+
+
+    
 
   return (
     // Using objects........
     <>
-      <TodoTitle />
+{/* H1 COMPONET */}
+      <TodoTitle /> <br />
+
+{/* ADD TODO BUTTON */}
+      <div className="">
+        <input type="text" onChange={ (event) => {console.log(event.target.value) }}/> <br />
+        <button onClick= {() => setPopup(true)} > Add ToDo </button>
+      </div>
+
+{/* TODO COMPONENTS */}
       <Todo todoDiv={tasks[0]} dbtn = {deleteBtn}/>      
       <Todo todoDiv={tasks[3]} dbtn = {deleteBtn}/>
       <Todo todoDiv={tasks[1]} dbtn = {deleteBtn}/>
       <Todo todoDiv={tasks[2]} dbtn = {deleteBtn}/>
+
+
+ {/* POPUP QUESTION */}
+      { popup && <Popup title='Are you sure?'/> }
+
+
+      {/* <Counter />  */}
     </>
 
 
